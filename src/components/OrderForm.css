@@ -1,0 +1,226 @@
+.order-form {
+  width: 29%;
+  margin: 0 auto;
+}
+
+.order-form h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  margin-top: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.order-form p {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.rating {
+  margin-left: 15rem;
+  font-size: 12px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+}
+
+.comments {
+  margin-left: 2.5rem;
+  font-size: 12px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+}
+
+.size-options h3 {
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.size-options h3 span {
+  color: red;
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+}
+
+.size-options label {
+  display: block;
+  margin-bottom: 1rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.size-options input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.pizza-options {
+  display: flex;
+  justify-content: flex-start; /* Bölümleri baştan hizalar */
+  align-items: flex-start; /* Yükseklik hizalamasını sağlar */
+  gap: 7rem;
+}
+
+.crust-options h3 {
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.crust-options h3 span {
+  color: red;
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+}
+
+.extra-toppings h3 {
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.extra-toppings p {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 2;
+  margin-top: -0.5rem;
+}
+
+.toppings-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  font-size: 12px;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.toppings-list label {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.toppings-list input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.customer-name h3 {
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.order-note h3 {
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+}
+
+.order-note textarea {
+  border-radius: 7px; /* 10px'lik yuvarlak köşe */
+  /* İç boşluk (isteğe bağlı) */
+  font-size: 16px; /* Yazı boyutu (isteğe bağlı) */
+  border: 1px solid #ccc; /* Sınır rengi */
+  width: 100%;
+  height: 25px;
+  padding-left: 1rem;
+  resize: none;
+}
+
+textarea::placeholder {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 2;
+}
+.customer-name input {
+  border-radius: 7px; /* 10px'lik yuvarlak köşe */
+  /* İç boşluk (isteğe bağlı) */
+  font-size: 16px; /* Yazı boyutu (isteğe bağlı) */
+  border: 1px solid #ccc; /* Sınır rengi */
+  width: 100%;
+  height: 25px;
+  padding-left: 1rem;
+  resize: none;
+}
+
+input::placeholder {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.order-quantity {
+  margin-top: 2rem;
+}
+
+hr {
+  margin-top: 2rem;
+  border-top: 1px solid rgb(214, 212, 212);
+}
+
+.button:hover {
+  background-color: #f0d361; /* Buton üzerine gelindiğinde rengin daha açık sarı olmasını sağlar */
+}
+
+.order-quantity .quantity {
+  border: 1px solid rgb(221, 220, 220);
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-summary {
+  font-size: 15px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  text-align: right; /* Sipariş toplamını sağa hizalar */
+  display: flex;
+  flex-direction: column; /* Başlık ve fiyatı alt alta sıralar */
+  justify-content: flex-start;
+  border: 1px solid rgb(221, 220, 220);
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.order-info {
+  display: flex; /* Yatayda hizalamak için flex kullanıyoruz */
+  justify-content: space-between; /* Öğeler arasına boşluk bırakır */
+  align-items: flex-start; /* Üst kenarları hizalar */
+  width: 100%;
+}
+.order-quantity {
+  display: flex;
+  align-items: flex-start; /* Butonları üst kenarda hizalar */
+}
+
+.order-summary p {
+  margin: 0; /* Paragraflar arasında boşluk olmasın */
+}
+.order-quantity button {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #fdc913;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
