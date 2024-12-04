@@ -123,7 +123,9 @@ const OrderForm = () => {
         </div>
       </div>
       <div className="customer-name">
-        <h3>İsim</h3>
+        <h3>
+          İsim <span>*</span>
+        </h3>
         <input
           type="text"
           placeholder="Adınızı giriniz"
@@ -146,31 +148,33 @@ const OrderForm = () => {
       </div>
       <hr></hr>
       <div className="order-info">
-        <div class="order-quantity">
-          <button class="decrease" onClick={decreaseQuantity}>
+        <div className="order-quantity">
+          <button className="decrease" onClick={decreaseQuantity}>
             -
           </button>
-          <span class="quantity" id="quantity">
+          <span className="quantity" id="quantity">
             {quantity}
           </span>
-          <button class="increase" onClick={increaseQuantity}>
+          <button className="increase" onClick={increaseQuantity}>
             +
           </button>
         </div>
 
-        <div class="order-summary">
+        <div className="order-summary">
           <h3>Sipariş Toplamı</h3>
           <div>
             <p>
-              Seçimler: <span id="pizza-price">25₺</span>
+              Seçimler <span id="pizza-price">25.00₺</span>
             </p>
             <p className="toplam">
-              Toplam: <span id="extra-price">110.50₺</span>
+              Toplam <span id="extra-price">110.50₺</span>
             </p>
           </div>
         </div>
       </div>
-      <button disabled={isFormDisabled}>Sipariş Ver</button>
+      <button className="siparis-butonu" disabled={isFormDisabled}>
+        SİPARİŞ VER
+      </button>
     </div>
   );
 };
