@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./OrderForm.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const OrderForm = () => {
   const [selectedSize, setSelectedSize] = useState("");
@@ -9,6 +11,12 @@ const OrderForm = () => {
   const [orderNote, setOrderNote] = useState("");
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate(); // useNavigate hook'unu tanımla
+
+  const pizzaPrice = 85.5; // Pizza fiyatı
+  const toppingPrice = 5; // Ek malzeme fiyat
 
   const toppings = [
     "Pepperoni",
@@ -27,13 +35,26 @@ const OrderForm = () => {
   ];
 
   useEffect(() => {
-    setIsFormDisabled(
-      selectedSize === "" ||
-        selectedCrust === "" || // Hamur seçilmediyse
-        (selectedToppings.length > 0 &&
-          (selectedToppings.length < 4 || selectedToppings.length > 10)) ||
-        name.length < 3 // Ekstra malzeme 4-10 arasında olmalı
-    );
+    const isValid =
+      selectedSize !== "" &&
+      selectedCrust !== "" &&
+      name.length >= 3 &&
+      (selectedToppings.length === 0 ||
+        (selectedToppings.length >= 4 && selectedToppings.length <= 10));
+
+    setIsFormDisabled(!isValid);
+
+    // Hata mesajını kontrol et, sadece malzeme seçildiyse geçerli
+    if (
+      selectedToppings.length > 0 &&
+      (selectedToppings.length < 4 || selectedToppings.length > 10)
+    ) {
+      setErrorMessage(
+        "En fazla 10 malzeme seçebilirsiniz. En az 4 malzeme seçilmelidir."
+      );
+    } else {
+      setErrorMessage("");
+    }
   }, [selectedSize, selectedCrust, selectedToppings, name]);
 
   const handleToppingChange = (topping) => {
@@ -45,6 +66,7 @@ const OrderForm = () => {
       setSelectedToppings(updatedToppings);
     }
   };
+
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1); // Sayıyı artır
   };
@@ -53,6 +75,36 @@ const OrderForm = () => {
     if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1); // Sayıyı azalt
     }
+  };
+
+  const handleSubmit = async () => {
+    if (isFormDisabled) return; // Sipariş verildiğinde OrderConfirmation sayfasına yönlendir
+
+    const orderData = {
+      isim: name,
+      boyut: selectedSize,
+      malzemeler: selectedToppings,
+      özel: orderNote,
+      adet: quantity,
+    };
+
+    // API'ye veri gönderme
+    try {
+      const response = await axios.post(
+        "https://reqres.in/api/pizza",
+        orderData
+      );
+      console.log("Sipariş Özeti:", response.data);
+      navigate("/order-confirmation");
+    } catch (error) {
+      console.error("API isteği sırasında bir hata oluştu:", error);
+    }
+  };
+
+  const calculateTotal = () => {
+    const toppingsTotal = selectedToppings.length * toppingPrice;
+    const pizzaTotal = pizzaPrice * quantity;
+    return pizzaTotal + toppingsTotal;
   };
 
   return (
@@ -146,7 +198,7 @@ const OrderForm = () => {
           onChange={(e) => setOrderNote(e.target.value)}
         />
       </div>
-      <hr></hr>
+      <hr />
       <div className="order-info">
         <div className="order-quantity">
           <button className="decrease" onClick={decreaseQuantity}>
@@ -164,18 +216,27 @@ const OrderForm = () => {
           <h3>Sipariş Toplamı</h3>
           <div>
             <p>
-              Seçimler <span id="pizza-price">25.00₺</span>
+              Seçimler{" "}
+              <span id="pizza-price">
+                {toppingPrice * selectedToppings.length}₺
+              </span>
             </p>
             <p className="toplam">
-              Toplam <span id="extra-price">110.50₺</span>
+              Toplam <span id="extra-price">{calculateTotal()}₺</span>
             </p>
           </div>
         </div>
       </div>
-      <button className="siparis-butonu" disabled={isFormDisabled}>
+      <button
+        className="siparis-butonu"
+        disabled={isFormDisabled}
+        onClick={handleSubmit}
+      >
         SİPARİŞ VER
       </button>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
   );
 };
+
 export default OrderForm;

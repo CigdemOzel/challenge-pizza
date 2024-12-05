@@ -1,0 +1,48 @@
+.confirmation-page {
+  background-color: #ce2829;
+  height: 100vh; /* Sayfanın tamamını kaplar */
+  display: flex; /* Flexbox düzeni ile içeriği ortalamak için */
+  flex-direction: column; /* Başlık ve paragrafları dikeyde hizalamak için */
+  justify-content: center; /* İçeriği dikeyde ortalamak için */
+  align-items: center; /* İçeriği yatayda ortalamak için */
+  color: white; /* Yazıyı beyaz yaparak kontrast oluşturur */
+}
+
+h1 {
+  position: absolute;
+  top: 7%; /* Başlığın resmin üst kısmında olmasını sağlamak */
+  left: 50%; /* Yatayda ortalamak için */
+  transform: translateX(-50%); /* Başlığı tam ortalamak için */
+  color: white; /* Yazıyı beyaz yaparak görünür kılmak */
+  text-align: center; /* Başlığı merkezde hizalamak */
+  font-size: 36px; /* Başlık boyutunu ayarlayın */
+  z-index: 1; /* Başlığı ön planda tutmak için */
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+}
+
+.ilk-p {
+  font-family: "Roboto Condensed", sans-serif;
+  position: absolute;
+  top: 35%; /* Başlığın resmin üst kısmında olmasını sağlamak */
+  left: 50%; /* Yatayda ortalamak için */
+  transform: translateX(-50%); /* Başlığı tam ortalamak için */
+  color: white; /* Yazıyı beyaz yaparak görünür kılmak */
+  text-align: center; /* Başlığı merkezde hizalamak */
+  font-size: 64px; /* Başlık boyutunu ayarlayın */
+  z-index: 1; /* Başlığı ön planda tutmak için */
+  font-weight: 250;
+}
+
+.ikinci-p {
+  font-family: "Roboto Condensed", sans-serif;
+  position: absolute;
+  top: 46%; /* Başlığın resmin üst kısmında olmasını sağlamak */
+  left: 50%; /* Yatayda ortalamak için */
+  transform: translateX(-50%); /* Başlığı tam ortalamak için */
+  color: white; /* Yazıyı beyaz yaparak görünür kılmak */
+  text-align: center; /* Başlığı merkezde hizalamak */
+  font-size: 64px; /* Başlık boyutunu ayarlayın */
+  z-index: 1; /* Başlığı ön planda tutmak için */
+  font-weight: 250;
+}
