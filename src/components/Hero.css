@@ -1,0 +1,102 @@
+.icons-1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+  margin-right: 2.5rem;
+}
+
+.icons-1 img {
+  width: 30px;
+  height: 30px;
+}
+
+.icons-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+  margin-right: 2.5rem;
+}
+
+.icons-2 img {
+  width: 30px;
+  height: 30px;
+}
+
+.icons-3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+  margin-right: 2.5rem;
+}
+
+.icons-3 img {
+  width: 30px;
+  height: 30px;
+}
+
+.icons-4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+  margin-right: 2.5rem;
+}
+
+.icons-4 img {
+  width: 30px;
+  height: 30px;
+}
+
+.icons-5 {
+  display: flex; /* Yan yana düzenleme için */
+  align-items: center; /* Resim ve paragrafı dikeyde hizala */
+  gap: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+  margin-right: 2.5rem;
+}
+
+.icons-5 img {
+  width: 30px;
+  height: 30px;
+}
+
+.icons-6 {
+  display: flex; /* Yan yana düzenleme için */
+  align-items: center; /* Resim ve paragrafı dikeyde hizala */
+  gap: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12px;
+}
+
+.icons-6 img {
+  width: 30px;
+  height: 30px;
+}
+
+.hero-icons {
+  display: flex; /* Tüm ikonlar ve metinler yan yana */
+  flex-wrap: wrap; /* Satır taşmasını engeller, taşarsa alt satıra geçer */
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-kartlar {
+  background-color: rgb(247, 247, 247);
+}
+
+.hero-kartlar img {
+  width: 350px;
+  height: 300px;
+  margin-top: 3rem;
+  border-radius: 8px;
+  margin-left: 21rem;
+}

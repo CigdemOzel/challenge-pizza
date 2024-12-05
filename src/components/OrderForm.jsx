@@ -13,10 +13,10 @@ const OrderForm = () => {
   const [quantity, setQuantity] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate = useNavigate(); // useNavigate hook'unu tanımla
+  const navigate = useNavigate();
 
-  const pizzaPrice = 85.5; // Pizza fiyatı
-  const toppingPrice = 5; // Ek malzeme fiyat
+  const pizzaPrice = 85.5;
+  const toppingPrice = 5;
 
   const toppings = [
     "Pepperoni",
@@ -44,7 +44,6 @@ const OrderForm = () => {
 
     setIsFormDisabled(!isValid);
 
-    // Hata mesajını kontrol et, sadece malzeme seçildiyse geçerli
     if (
       selectedToppings.length > 0 &&
       (selectedToppings.length < 4 || selectedToppings.length > 10)
@@ -68,17 +67,17 @@ const OrderForm = () => {
   };
 
   const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1); // Sayıyı artır
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1); // Sayıyı azalt
+      setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
 
   const handleSubmit = async () => {
-    if (isFormDisabled) return; // Sipariş verildiğinde OrderConfirmation sayfasına yönlendir
+    if (isFormDisabled) return;
 
     const orderData = {
       isim: name,
