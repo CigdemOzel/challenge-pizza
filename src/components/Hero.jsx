@@ -92,20 +92,34 @@ function Hero() {
           </button>
         </div>
         <div className="pizzalar">
-          <img
-            className="pizza-1"
-            src="https://github.com/Workintech/fsweb-s8-challenge-pizza/blob/main/images/iteration-2-images/pictures/food-1.png?raw=true"
-          />
+          <div className="pizzalar-resimler">
+            <img
+              className="pizza-1"
+              src="https://github.com/Workintech/fsweb-s8-challenge-pizza/blob/main/images/iteration-2-images/pictures/food-1.png?raw=true"
+            />
 
-          <img
-            className="pizza-2"
-            src="https://github.com/Workintech/fsweb-s8-challenge-pizza/blob/main/images/iteration-2-images/pictures/food-2.png?raw=true"
-          />
+            <img
+              className="pizza-2"
+              src="https://github.com/Workintech/fsweb-s8-challenge-pizza/blob/main/images/iteration-2-images/pictures/food-2.png?raw=true"
+            />
 
-          <img
-            className="pizza-3"
-            src="https://github.com/Workintech/fsweb-s8-challenge-pizza/blob/main/images/iteration-2-images/pictures/food-3.png?raw=true"
-          />
+            <img
+              className="pizza-3"
+              src="https://github.com/Workintech/fsweb-s8-challenge-pizza/blob/main/images/iteration-2-images/pictures/food-3.png?raw=true"
+            />
+          </div>
+          <p className="pizza-1-baslik">Terminal Pizza</p>
+          <p className="pizza-1-puan">4.9</p>
+          <p className="pizza-1-yorum">(200)</p>
+          <p className="pizza-1-fiyat">60₺</p>
+          <p className="pizza-2-baslik">Position Absolute Acı Pizza</p>
+          <p className="pizza-2-puan">4.9</p>
+          <p className="pizza-2-yorum">(200)</p>
+          <p className="pizza-2-fiyat">60₺</p>
+          <p className="pizza-3-baslik">useEffect Tavuklu Burger</p>
+          <p className="pizza-3-puan">4.9</p>
+          <p className="pizza-3-yorum">(200)</p>
+          <p className="pizza-3-fiyat">60₺</p>
         </div>
       </div>
     </div>
