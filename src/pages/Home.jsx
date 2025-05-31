@@ -1,7 +1,8 @@
 import React from "react";
 import "./Home.css";
-import Hero from "./Hero";
+import Hero from "../components/Hero";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Home() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ function Home() {
         Acıktım
       </button>
       <Hero />
+      <Footer />
     </div>
   );
 }
