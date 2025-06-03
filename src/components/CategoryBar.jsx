@@ -8,23 +8,24 @@ const Bar = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 1.5rem;
-  background-color: #fff;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    padding: 1rem;
-  }
 `;
 
-const Category = styled.div`
+const CategoryStyled = styled.div`
   display: flex;
   gap: 0.6rem;
   align-items: center;
-  width: 70px;
   min-width: 70px;
   transition: transform 0.2s ease;
-  margin-right: 1rem;
+
+  background-color: white;
+  padding: 0.5rem 0.5rem;
+  border-radius: 2rem;
+
+  ${({ withBorder }) =>
+    withBorder &&
+    `
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  `}
 
   img {
     width: 30px;
@@ -35,20 +36,21 @@ const Category = styled.div`
   span {
     font-size: 0.8rem;
     text-align: center;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Barlow";
     color: #292929;
     white-space: nowrap;
+    font-weight: 500;
   }
 `;
 
-function CategoryBar() {
+function CategoryBar({ withBorder = false }) {
   return (
     <Bar>
       {categoryData.map((cat, index) => (
-        <Category key={index}>
+        <CategoryStyled key={index} withBorder={withBorder}>
           <img src={cat.icon} alt={cat.label} />
           <span>{cat.label}</span>
-        </Category>
+        </CategoryStyled>
       ))}
     </Bar>
   );

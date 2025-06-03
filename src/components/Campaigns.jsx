@@ -1,38 +1,69 @@
 import React from "react";
-import { campaignData } from "../data/campaigns";
 import styled from "styled-components";
 import CampaignCard from "./CampaignCard";
 
-const Grid = styled.div`
+const CampaignWrapper = styled.section`
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1rem;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(2, auto);
+  gap: 1.5rem;
   padding: 2rem;
+  margin: 0 auto;
+  max-width: 850px;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+const LargeCardWrapper = styled.div`
+  grid-row: span 2;
+  max-width: 400px;
 `;
 
 function Campaigns() {
-  const largeCard = campaignData.find((item) => item.type === "large");
-  const smallCards = campaignData.filter((item) => item.type === "small");
-
   return (
-    <Grid>
-      <CampaignCard {...largeCard} />
-      <Column>
-        {smallCards.map((item) => (
-          <CampaignCard key={item.id} {...item} />
-        ))}
-      </Column>
-    </Grid>
+    <CampaignWrapper>
+      <LargeCardWrapper>
+        <CampaignCard
+          title={
+            <>
+              Özel <br /> Lezzetus
+            </>
+          }
+          desc="Position: Absolute Acı Burger"
+          bg="/cta/kart-1.png"
+          variant="left"
+        />
+      </LargeCardWrapper>
+
+      <CampaignCard
+        title={
+          <>
+            Hackhathlon
+            <br />
+            Burger Menü
+          </>
+        }
+        desc=""
+        bg="/cta/kart-2.png"
+        variant="right"
+      />
+
+      <CampaignCard
+        title={
+          <>
+            <span style={{ color: "red" }}>Çoooook</span> hızlı
+            <br />
+            npm gibi kurye
+          </>
+        }
+        desc=""
+        bg="/cta/kart-3.png"
+        variant="right"
+        textColor="black"
+      />
+    </CampaignWrapper>
   );
 }
 
