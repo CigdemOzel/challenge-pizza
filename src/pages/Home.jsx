@@ -5,6 +5,7 @@ import HeroSection from "../components/HeroSection";
 import CategoryBar from "../components/CategoryBar";
 import Campaigns from "../components/Campaigns";
 import ProductsSection from "../components/ProductsSection";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   background-color: rgb(247, 247, 247);
@@ -19,6 +20,7 @@ function Home() {
         <Campaigns />
         <ProductsSection />
         <PizzaList />
+        <Footer />
       </div>
     </Container>
   );
